@@ -5,8 +5,202 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlowDocument2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
-        
+        <StackPanel Grid.ColumnSpan="2">
+            <StackPanel.Resources>
+                <Style x:Key="baseFont">
+                    <Setter Property="Control.FontFamily" Value="Trebuchet MS"/>
+                    <Setter Property="Control.FontSize" Value="21"/>
+                </Style>
+                <Style TargetType="Expander" BasedOn="{StaticResource baseFont}"/>
+                <Style TargetType="Paragraph" BasedOn="{StaticResource baseFont}">
+                    <Setter Property="TextIndent" Value="30"/>
+                </Style>
+                <Style TargetType="Table">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Cyan"/>
+                </Style>
+                <Style TargetType="TableCell">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Cyan"/>
+                    <Setter Property="Padding" Value="7"/>
+                </Style>
+            </StackPanel.Resources>
+            <Expander Header="Форматирование текста">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run>Обычный шрифт</Run>
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Полужирный шрифт</Bold>
+                        </Paragraph>
+                        <Paragraph>
+                            <Italic>Наклонный шрифт</Italic>
+                        </Paragraph>
+                        <Paragraph>
+                            <Underline>Подчеркнутый шрифт</Underline>
+                        </Paragraph>
+                        <Paragraph>
+                            <Span Foreground="Lime">Выделенный шрифт</Span>
+                        </Paragraph>
+                        <Section Foreground="Navy">
+                            <Paragraph>
+                                Происхождение слова «пингвин» имеет 3 версии. По причине схожести пингвина с этой птицей определение перенесли и на него. Согласно второму варианту название пингвину дало английское слово pinwing, в переводе означающее «крыло-шпилька». Третья версия – латинское прилагательное pinguis, означающее «толстый».
+                            </Paragraph>
+                            <Paragraph>
+                                Первая предполагает сочетание валлийских слов pen (голова) и gwyn (белая), которые изначально относились к вымершей сегодня бескрылой гагарке.
+                            </Paragraph>
+                        </Section>
+                        <Paragraph>
+                            Все пингвины умеют плавать и превосходно ныряют, а вот летать совершенно не могут. На суше птица выглядит довольно неуклюже из-за особенностей строения тела и конечностей. У пингвина обтекаемая форма тела с сильно развитой мускулатурой грудного киля, которая нередко составляет четверть от общей массы. Тело пингвина довольно упитанное, чуть сжатое с боков и покрыто перьями. Не слишком крупная голова находится на подвижной, гибкой и довольно короткой шее. Клюв пингвина сильный и очень острый.</Paragraph>
+                        <Paragraph>
+                            Крылья пингвина в результате эволюции и образа жизни видоизменились в эластичные ласты: при плавании под водой они вращаются в плечевом суставе по принципу винта. Ноги короткие и толстые, имеют по 4 пальца, соединенных плавательными перепонками. В отличие от других птиц, ноги у пингвина существенно вынесены назад, что вынуждает птицу держать тело строго вертикально во время нахождения на суше.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Создание списков">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph FontSize="24">Список студентов</Paragraph>
+                        <List MarkerStyle="Square">
+                            <ListItem>
+                                <Paragraph>Иванов</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Петров</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Мудак</Paragraph>
+                            </ListItem>
+
+                        </List>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Создание таблиц">
+                <FlowDocument>
+                    <Paragraph FontSize="23" Foreground="Red">Языки программирования</Paragraph>
+                    <Table>
+                        <Table.Columns>
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="2*"/>
+                            <TableColumn Width="1.5*"/>
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>№</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Название</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Год</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>1</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Fortran</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>1957</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>2</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Basic</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>1964</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>3</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Pascal</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>1969</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>4</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>C</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>1972</Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                        </TableRowGroup>
+                    </Table>
+                </FlowDocument>
+
+            </Expander>
+            <Expander Header="Гиперссылки">
+                <FlowDocumentPageViewer Height="302">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Hyperlink NavigateUri="http://www.google.com.ua" RequestNavigate="Hyperlink_RequestNavigate">Google</Hyperlink>
+                        </Paragraph>
+                        <Paragraph>
+                            <Hyperlink NavigateUri="http://www.google.com.ua" RequestNavigate="Hyperlink_RequestNavigate_1">Ukr.net</Hyperlink>
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentPageViewer>
+            </Expander>
+            <Expander Header="Плавающие панели">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Figure HorizontalAnchor="ColumnLeft">
+                                <Paragraph>
+                                    <Image Source="Images/Pin.jpg" Width="300"/>
+                                </Paragraph>
+                            </Figure>
+                            Все пингвины умеют плавать и превосходно ныряют, а вот летать совершенно не могут. На суше птица выглядит довольно неуклюже из-за особенностей строения тела и конечностей. У пингвина обтекаемая форма тела с сильно развитой мускулатурой грудного киля, которая нередко составляет четверть от общей массы. Тело пингвина довольно упитанное, чуть сжатое с боков и покрыто перьями. Не слишком крупная голова находится на подвижной, гибкой и довольно короткой шее. Клюв пингвина сильный и очень острый.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Интерактивные панели">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph>
+                            Все пингвины умеют плавать и 
+                            превосходно ныряют, 
+                            а вот летать совершенно не могут.
+                            <LineBreak/>
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <StackPanel HorizontalAlignment="Center" Margin="0 15">
+                                    <Label Content="Ваше имя: "/>
+                                    <TextBox x:Name="user" Margin="0 10"/>
+                                    <Button x:Name="start" Content="Start" 
+                                            Click="start_Click"/>
+                                </StackPanel>
+                            </InlineUIContainer>
+                            <LineBreak/>
+                            На суше птица выглядит довольно неуклюже из-за особенностей строения тела и конечностей. 
+                            У пингвина обтекаемая форма тела с сильно развитой мускулатурой грудного киля, которая нередко составляет четверть от общей массы. Тело пингвина довольно упитанное, чуть сжатое с боков и покрыто перьями.
+                            Не слишком крупная голова находится на подвижной, гибкой и довольно короткой шее. Клюв пингвина сильный и очень острый.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+        </StackPanel>
     </Grid>
 </Window>

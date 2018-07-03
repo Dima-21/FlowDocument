@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace FlowDocument2
 {
@@ -23,6 +24,22 @@ namespace FlowDocument2
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
+        }
+
+        private void Hyperlink_RequestNavigate_1(object sender, RequestNavigateEventArgs e)
+        {
+
+        }
+
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Ваше имя: {user.Text}");
         }
     }
 }
